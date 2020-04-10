@@ -1,0 +1,4 @@
+users:
+  - { name: 'user1', password: 'user1_pass', comment: 'user1', createhome: 'yes', state: 'present', key: 'keys/user1' }
+
+

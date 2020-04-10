@@ -1,0 +1,14 @@
+- name: Add users
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    update_password: on_create
+    state: "{{ item.state }}"
+    comment: "{{ item.comment }}"
+  with_items: "{{ users }}"
+
+- name: Add user ssh keys
+  authorized_key: 
+    user: "{{ item.name }}"
+    key: "{{ lookup('file', item.key) }}"
+  with_items: "{{ users }}"
