@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: python3.6
+      - image: circleci/python:3.6.9
     working_directory: ~/add_ssh_users
     steps:
       - checkout
