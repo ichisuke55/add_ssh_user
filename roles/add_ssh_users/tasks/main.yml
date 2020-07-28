@@ -8,7 +8,7 @@
   with_items: "{{ users }}"
 
 - name: Add user ssh keys
-  authorized_key: 
+  authorized_key:
     user: "{{ item.name }}"
     key: "{{ lookup('file', item.key) }}"
   with_items: "{{ users }}"
